@@ -63,9 +63,9 @@ app.post("/logs", (req, res) => {
     console.log("Just Added:", createdLog);
   });
 
-  res.send(req.body);
+  // res.send(req.body);
 
-  // res.redirect("/new");
+  res.redirect("/logs");
 });
 
 // Show Route
@@ -83,6 +83,33 @@ app.get("/logs/:id", (req, res) => {
 app.delete("/logs/:id", (req, res) => {
   Log.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/logs");
+  });
+});
+
+//Edit Route
+app.get("/logs/:id/edit", (req, res) => {
+  Log.findById(req.params.id, (err, foundLog) => {
+    console.log(err);
+    if (!err) {
+      res.render("Edit", { log: foundLog });
+    } else {
+      res.send({ msg: err.message });
+    }
+  });
+});
+
+// PUT/PATCH
+app.put("/logs/:id", (req, res) => {
+  if (req.body.shipIsBroken === "on") {
+    req.body.shipIsBroken = true;
+  } else {
+    req.body.shipIsBroken = false;
+  }
+
+  Log.findByIdAndUpdate(req.params.id, req.body, (err, updatedLog) => {
+    console.log(err);
+    console.log(updatedLog);
+    res.redirect(`/logs/${req.params.id}`);
   });
 });
 
