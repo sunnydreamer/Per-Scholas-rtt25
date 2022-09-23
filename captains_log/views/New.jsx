@@ -3,7 +3,7 @@ const React = require("react");
 class New extends React.Component {
   render() {
     return (
-      <>
+      <div>
         <form action="/logs" method="POST">
           Title: <input type="text" name="title" />
           <br />
@@ -13,7 +13,7 @@ class New extends React.Component {
           <br />
           <input type="submit" />
         </form>
-      </>
+      </div>
     );
   }
 }
