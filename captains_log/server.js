@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Log = require("./models/logs");
+const methodOverride = require("method-override");
 
 const app = express();
 
@@ -10,6 +11,9 @@ app.engine("jsx", require("express-react-views").createEngine());
 
 // Set up body parser
 app.use(express.urlencoded({ extended: false }));
+
+// Set up method override
+app.use(methodOverride("_method"));
 
 // Set up Mongoose
 require("dotenv").config();
@@ -21,6 +25,13 @@ mongoose.connect(process.env.MONGO_URI, {
 mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
+
+// Middleware
+
+// app.use((req, res, next) => {
+//   console.log("I am only here, for the routes");
+//   next();
+// });
 
 // Index
 
@@ -65,6 +76,13 @@ app.get("/logs/:id", (req, res) => {
     res.render("Show", {
       log: foundLog,
     });
+  });
+});
+
+// Delete Route
+app.delete("/logs/:id", (req, res) => {
+  Log.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/logs");
   });
 });
 
