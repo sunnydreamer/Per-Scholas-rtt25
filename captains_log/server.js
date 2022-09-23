@@ -57,6 +57,17 @@ app.post("/logs", (req, res) => {
   // res.redirect("/new");
 });
 
+// Show Route
+app.get("/logs/:id", (req, res) => {
+  Log.findById(req.params.id, (err, foundLog) => {
+    console.log(err);
+    console.log("Found", foundLog);
+    res.render("Show", {
+      log: foundLog,
+    });
+  });
+});
+
 // Seeds*
 app.get("/seed", (req, res) => {
   Log.create(

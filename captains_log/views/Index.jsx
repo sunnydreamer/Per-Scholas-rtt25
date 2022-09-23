@@ -20,6 +20,8 @@ class Index extends React.Component {
                 Entry: {log.entry}
                 <br />
                 shipIsBroken: {log.shipIsBroken ? "true" : "false"}
+                <br />
+                <a href={`logs/${log._id}`}> Show Detail</a>
               </li>
             );
           })}
