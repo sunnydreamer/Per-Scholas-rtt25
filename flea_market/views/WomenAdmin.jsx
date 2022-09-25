@@ -27,7 +27,9 @@ class WomanAdmin extends React.Component {
             </div>
           </div>
 
-          <div className="addBtn">Add New Product</div>
+          <a href="/women/admin/new">
+            <div className="addBtn"> Add New Product</div>
+          </a>
 
           <div className="productShow">
             {products.map((product, i) => {
@@ -50,8 +52,11 @@ class WomanAdmin extends React.Component {
                   <form action={`/cart/${product._id}`} method="POST">
                     <input type="submit" value="Edit" />
                   </form>
-                  <form action={`/buy/${product._id}`} method="POST">
-                    <input type="submit" value="Delete" />
+                  <form
+                    action={`/women/admin/${product._id}?_method=DELETE`}
+                    method="POST"
+                  >
+                    <input type="submit" value="DELETE" />
                   </form>
                 </div>
               );

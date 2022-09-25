@@ -4,18 +4,23 @@ const app = express();
 
 //Import modules
 const Men = require("./models/men");
+const Women = require("./models/women");
 const seedWomen = require("./models/seedWomen");
 const seedMen = require("./models/seedMen");
 
 // Set up body parser
 app.use(express.urlencoded({ extended: false }));
 
+// Set up method override
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
 // Set up css
 app.use(express.static("public"));
 
 // Set up Mongoose
 const mongoose = require("mongoose");
-const Women = require("./models/women");
+
 require("dotenv").config();
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -66,6 +71,41 @@ app.get("/women/admin", (req, res) => {
   Women.find({}, (err, allProducts) => {
     // console.log(err);
     res.render("WomenAdmin", {
+      products: allProducts,
+      cart: cart,
+    });
+  });
+});
+
+// Women Delete
+app.delete("/women/admin/:id", (req, res) => {
+  console.log(req.params.id);
+  Women.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/women/admin");
+  });
+});
+
+app.post("/women/admin", (req, res) => {
+  if (req.body.isUsed === "on") {
+    req.body.isUsed = true;
+  } else {
+    req.body.isUsed = false;
+  }
+
+  Women.create(req.body, (err, createdProduct) => {
+    console.log(err);
+    console.log("Just Added : ", createdProduct);
+  });
+  res.redirect("/women/admin");
+});
+
+// Women New Route
+app.get("/women/admin/new", (req, res) => {
+  //refresh shopping cart
+
+  Women.find({}, (err, allProducts) => {
+    // console.log(err);
+    res.render("WomenNew", {
       products: allProducts,
       cart: cart,
     });

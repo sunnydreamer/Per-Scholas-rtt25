@@ -195,3 +195,9 @@ a {
   position: relative;
   /* border: solid black; */
 }
+
+/* new product */
+
+.newProduct {
+  text-align: center;
+}
