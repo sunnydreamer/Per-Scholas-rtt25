@@ -1,7 +1,7 @@
 const React = require("react");
 const DefaultLayout = require("./layouts/Default");
 
-class Woman extends React.Component {
+class Women extends React.Component {
   render() {
     const { products } = this.props;
     const { cart } = this.props;
@@ -45,7 +45,7 @@ class Woman extends React.Component {
                   <br />
                   Seller: {product.seller}
                   <br />
-                  <form action={`/cart/${product._id}`} method="POST">
+                  <form action={`/women/cart/${product._id}`} method="POST">
                     <input type="submit" value="Add to Cart" />
                   </form>
                   <form action={`/buy/${product._id}`} method="POST">
@@ -65,4 +65,4 @@ class Woman extends React.Component {
   }
 }
 
-module.exports = Woman;
+module.exports = Women;

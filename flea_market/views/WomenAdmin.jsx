@@ -49,7 +49,7 @@ class WomanAdmin extends React.Component {
                   <br />
                   Seller: {product.seller}
                   <br />
-                  <form action={`/cart/${product._id}`} method="POST">
+                  <form action={`/women/admin/${product._id}/edit`}>
                     <input type="submit" value="Edit" />
                   </form>
                   <form

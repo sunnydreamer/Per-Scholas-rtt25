@@ -85,6 +85,41 @@ app.delete("/women/admin/:id", (req, res) => {
   });
 });
 
+// women put patch
+
+app.put("/women/admin/:id", (req, res) => {
+  console.log(req.params.id);
+
+  if (req.body.isUsed === "on") {
+    req.body.isUsed = true;
+  } else {
+    req.body.isUsed = false;
+  }
+
+  Women.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {
+    console.log(err);
+    console.log(updatedProduct);
+    res.redirect("/women/admin");
+  });
+});
+
+// Women Edit
+
+app.get("/women/admin/:id/edit", (req, res) => {
+  Women.findById(req.params.id, (err, foundProduct) => {
+    console.log(err);
+    if (!err) {
+      res.render("WomenEdit", {
+        product: foundProduct,
+        cart: cart,
+        //pass in the foundStudent so we can prefill the form
+      });
+    } else {
+      res.send({ msg: err.message });
+    }
+  });
+});
+
 app.post("/women/admin", (req, res) => {
   if (req.body.isUsed === "on") {
     req.body.isUsed = true;
@@ -125,37 +160,21 @@ app.get("/men", (req, res) => {
   });
 });
 
-// Admin Route
-app.get("/admin", (req, res) => {
-  //refresh shopping cart
-
-  Women.find({}, (err, allProducts) => {
-    // console.log(err);
-    res.render("Admin", {
-      products: allProducts,
-      cart: cart,
-    });
-  });
+// Cart Route
+app.get("/cart", (req, res) => {
+  res.send(cart);
 });
 
-// Cart Route
-// app.get("/cart", (req, res) => {
-//   res.send(cart);
-// });
-
-// app.post("/cart/:id", (req, res) =Men.findById(req.params.id, (err, foundProduct) => {
-//     if (!err) {
-//       cart.push(foundProduct);
-//       res.redirect("/index");
-
-//       // cart[cart.length - 1]["quantity"] = 1;
-
-//       // res.redirect("/index");
-//     } else {
-//       res.send({ msg: err.message });
-//     }
-//   });
-// });
+app.post("/women/cart/:id", (req, res) => {
+  Women.findById(req.params.id, (err, foundProduct) => {
+    if (!err) {
+      cart.push(foundProduct);
+      res.redirect("/women");
+    } else {
+      res.send("not in womens");
+    }
+  });
+});
 
 // Seed Route
 
