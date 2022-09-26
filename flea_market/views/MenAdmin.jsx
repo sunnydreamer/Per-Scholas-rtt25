@@ -1,12 +1,16 @@
 const React = require("react");
 const DefaultLayout = require("./layouts/Default");
 
-class Men extends React.Component {
+class MenAdmin extends React.Component {
   render() {
     const { products } = this.props;
     const { cart } = this.props;
     return (
-      <DefaultLayout title={"Flea Market"} cart={cart.length} subtitle={"Men"}>
+      <DefaultLayout
+        title={"Flea Market"}
+        cart={cart.length}
+        subtitle={"Men Admin"}
+      >
         <div>
           <div className="pageNav">
             <div className="backContainer">
@@ -17,11 +21,15 @@ class Men extends React.Component {
               </a>
             </div>
             <div>
-              <a href="/men/admin" className="pageAdmin">
-                Admin Mode (OFF)
+              <a href="/men" className="pageAdmin">
+                Admin Mode (ON)
               </a>
             </div>
           </div>
+
+          <a href="/men/admin/new">
+            <div className="addBtn"> Add New Product</div>
+          </a>
 
           <div className="productShow">
             {products.map((product, i) => {
@@ -41,11 +49,14 @@ class Men extends React.Component {
                   <br />
                   Seller: {product.seller}
                   <br />
-                  <form action={`/men/cart/${product._id}`} method="POST">
-                    <input type="submit" value="Add to Cart" />
+                  <form action={`/men/admin/${product._id}/edit`}>
+                    <input type="submit" value="Edit" />
                   </form>
-                  <form action={`men/buy/${product._id}`} method="POST">
-                    <input type="submit" value="Buy" />
+                  <form
+                    action={`/men/admin/${product._id}?_method=DELETE`}
+                    method="POST"
+                  >
+                    <input type="submit" value="DELETE" />
                   </form>
                 </div>
               );
@@ -57,4 +68,4 @@ class Men extends React.Component {
   }
 }
 
-module.exports = Men;
+module.exports = MenAdmin;

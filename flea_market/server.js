@@ -81,7 +81,17 @@ app.get("/women/admin", (req, res) => {
 app.delete("/women/admin/:id", (req, res) => {
   console.log(req.params.id);
   Women.findByIdAndRemove(req.params.id, (err, data) => {
+    console.log(err);
     res.redirect("/women/admin");
+  });
+});
+
+// Men Delete
+app.delete("/men/admin/:id", (req, res) => {
+  console.log(req.params.id);
+  Men.findByIdAndRemove(req.params.id, (err, data) => {
+    console.log(err);
+    res.redirect("/men/admin");
   });
 });
 
@@ -103,6 +113,22 @@ app.put("/women/admin/:id", (req, res) => {
   });
 });
 
+app.put("/men/admin/:id", (req, res) => {
+  console.log(req.params.id);
+
+  if (req.body.isUsed === "on") {
+    req.body.isUsed = true;
+  } else {
+    req.body.isUsed = false;
+  }
+
+  Men.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {
+    console.log(err);
+    console.log(updatedProduct);
+    res.redirect("/men/admin");
+  });
+});
+
 // Women Edit
 
 app.get("/women/admin/:id/edit", (req, res) => {
@@ -110,6 +136,21 @@ app.get("/women/admin/:id/edit", (req, res) => {
     console.log(err);
     if (!err) {
       res.render("WomenEdit", {
+        product: foundProduct,
+        cart: cart,
+        //pass in the foundStudent so we can prefill the form
+      });
+    } else {
+      res.send({ msg: err.message });
+    }
+  });
+});
+
+app.get("/men/admin/:id/edit", (req, res) => {
+  Men.findById(req.params.id, (err, foundProduct) => {
+    console.log(err);
+    if (!err) {
+      res.render("MenEdit", {
         product: foundProduct,
         cart: cart,
         //pass in the foundStudent so we can prefill the form
@@ -134,6 +175,62 @@ app.post("/women/admin", (req, res) => {
   res.redirect("/women/admin");
 });
 
+app.post("/men/admin", (req, res) => {
+  if (req.body.isUsed === "on") {
+    req.body.isUsed = true;
+  } else {
+    req.body.isUsed = false;
+  }
+
+  Men.create(req.body, (err, createdProduct) => {
+    console.log(err);
+    console.log("Just Added : ", createdProduct);
+  });
+  res.redirect("/men/admin");
+});
+
+// men Edit
+
+app.get("/women/admin/:id/edit", (req, res) => {
+  Men.findById(req.params.id, (err, foundProduct) => {
+    console.log(err);
+    if (!err) {
+      res.render("MenEdit", {
+        product: foundProduct,
+        cart: cart,
+        //pass in the foundStudent so we can prefill the form
+      });
+    } else {
+      res.send({ msg: err.message });
+    }
+  });
+});
+
+// app.post("/women/admin", (req, res) => {
+//   if (req.body.isUsed === "on") {
+//     req.body.isUsed = true;
+//   } else {
+//     req.body.isUsed = false;
+//   }
+
+//   Women.create(req.body, (err, createdProduct) => {
+//     console.log(err);
+//     console.log("Just Added : ", createdProduct);
+//   });
+//   res.redirect("/women/admin");
+// });
+
+// men admin route
+app.get("/men/admin", (req, res) => {
+  Men.find({}, (err, allProducts) => {
+    // console.log(err);
+    res.render("MenAdmin", {
+      products: allProducts,
+      cart: cart,
+    });
+  });
+});
+
 // Women New Route
 app.get("/women/admin/new", (req, res) => {
   //refresh shopping cart
@@ -141,6 +238,18 @@ app.get("/women/admin/new", (req, res) => {
   Women.find({}, (err, allProducts) => {
     // console.log(err);
     res.render("WomenNew", {
+      products: allProducts,
+      cart: cart,
+    });
+  });
+});
+
+app.get("/men/admin/new", (req, res) => {
+  //refresh shopping cart
+
+  Men.find({}, (err, allProducts) => {
+    // console.log(err);
+    res.render("MenNew", {
       products: allProducts,
       cart: cart,
     });
@@ -162,7 +271,8 @@ app.get("/men", (req, res) => {
 
 // Cart Route
 app.get("/cart", (req, res) => {
-  res.send(cart);
+  res.render("Cart", { cart: cart });
+  console.log(cart);
 });
 
 app.post("/women/cart/:id", (req, res) => {
@@ -172,6 +282,17 @@ app.post("/women/cart/:id", (req, res) => {
       res.redirect("/women");
     } else {
       res.send("not in womens");
+    }
+  });
+});
+
+app.post("/men/cart/:id", (req, res) => {
+  Men.findById(req.params.id, (err, foundProduct) => {
+    if (!err) {
+      cart.push(foundProduct);
+      res.redirect("/men");
+    } else {
+      res.send("not in mens");
     }
   });
 });

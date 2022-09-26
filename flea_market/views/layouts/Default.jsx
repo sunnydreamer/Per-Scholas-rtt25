@@ -25,7 +25,9 @@ class DefaultLayout extends React.Component {
               </div>
               <div className="navRight">
                 <div className="navItem">
-                  <a href="/cart">SHOPPING CART ({this.props.cart})</a>{" "}
+                  <a href="/cart" className="cart">
+                    SHOPPING CART ({this.props.cart})
+                  </a>{" "}
                 </div>
               </div>
             </nav>
