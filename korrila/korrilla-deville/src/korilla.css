@@ -1,0 +1,25 @@
+body {
+  background-color: lemonchiffon;
+}
+
+.receiptTitle {
+  color: blue;
+  border: solid lightblue;
+}
+
+.orderList {
+  padding: 1em;
+}
+
+.listItem {
+  width: 300px;
+  margin: 0.5em auto;
+  border: solid salmon;
+  font-size: 24px;
+  border-radius: 22px;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-evenly;
+}
