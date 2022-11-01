@@ -53,11 +53,22 @@ app.get("/index", (req, res) => {
 
 // Women Route
 app.get("/women", (req, res) => {
-  //refresh shopping cart
-
   Women.find({}, (err, allProducts) => {
     // console.log(err);
     res.render("Women", {
+      products: allProducts,
+      cart: cart,
+    });
+  }).sort({ createdAt: -1 });
+});
+
+// Men Route
+app.get("/men", (req, res) => {
+  //refresh shopping cart
+
+  Men.find({}, (err, allProducts) => {
+    // console.log(err);
+    res.render("Men", {
       products: allProducts,
       cart: cart,
     });
@@ -66,15 +77,49 @@ app.get("/women", (req, res) => {
 
 // Women Admin Route
 app.get("/women/admin", (req, res) => {
-  //refresh shopping cart
-
   Women.find({}, (err, allProducts) => {
-    // console.log(err);
     res.render("WomenAdmin", {
       products: allProducts,
       cart: cart,
     });
   });
+});
+
+app.post("/women/admin", (req, res) => {
+  if (req.body.isUsed === "on") {
+    req.body.isUsed = true;
+  } else {
+    req.body.isUsed = false;
+  }
+  Women.create(req.body, (err, createdProduct) => {
+    console.log(err);
+    console.log("Just Added : ", createdProduct);
+  });
+  res.redirect("/women/admin");
+});
+
+// Men Admin Route
+app.get("/men/admin", (req, res) => {
+  Men.find({}, (err, allProducts) => {
+    // console.log(err);
+    res.render("MenAdmin", {
+      products: allProducts,
+      cart: cart,
+    });
+  });
+});
+
+app.post("/men/admin", (req, res) => {
+  if (req.body.isUsed === "on") {
+    req.body.isUsed = true;
+  } else {
+    req.body.isUsed = false;
+  }
+  Men.create(req.body, (err, createdProduct) => {
+    console.log(err);
+    console.log("Just Added : ", createdProduct);
+  });
+  res.redirect("/men/admin");
 });
 
 // Women Delete
@@ -96,16 +141,13 @@ app.delete("/men/admin/:id", (req, res) => {
 });
 
 // women put patch
-
 app.put("/women/admin/:id", (req, res) => {
   console.log(req.params.id);
-
   if (req.body.isUsed === "on") {
     req.body.isUsed = true;
   } else {
     req.body.isUsed = false;
   }
-
   Women.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {
     console.log(err);
     console.log(updatedProduct);
@@ -113,15 +155,14 @@ app.put("/women/admin/:id", (req, res) => {
   });
 });
 
+// men put patch
 app.put("/men/admin/:id", (req, res) => {
   console.log(req.params.id);
-
   if (req.body.isUsed === "on") {
     req.body.isUsed = true;
   } else {
     req.body.isUsed = false;
   }
-
   Men.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {
     console.log(err);
     console.log(updatedProduct);
@@ -130,7 +171,6 @@ app.put("/men/admin/:id", (req, res) => {
 });
 
 // Women Edit
-
 app.get("/women/admin/:id/edit", (req, res) => {
   Women.findById(req.params.id, (err, foundProduct) => {
     console.log(err);
@@ -146,6 +186,7 @@ app.get("/women/admin/:id/edit", (req, res) => {
   });
 });
 
+// Men Edit
 app.get("/men/admin/:id/edit", (req, res) => {
   Men.findById(req.params.id, (err, foundProduct) => {
     console.log(err);
@@ -161,80 +202,8 @@ app.get("/men/admin/:id/edit", (req, res) => {
   });
 });
 
-app.post("/women/admin", (req, res) => {
-  if (req.body.isUsed === "on") {
-    req.body.isUsed = true;
-  } else {
-    req.body.isUsed = false;
-  }
-
-  Women.create(req.body, (err, createdProduct) => {
-    console.log(err);
-    console.log("Just Added : ", createdProduct);
-  });
-  res.redirect("/women/admin");
-});
-
-app.post("/men/admin", (req, res) => {
-  if (req.body.isUsed === "on") {
-    req.body.isUsed = true;
-  } else {
-    req.body.isUsed = false;
-  }
-
-  Men.create(req.body, (err, createdProduct) => {
-    console.log(err);
-    console.log("Just Added : ", createdProduct);
-  });
-  res.redirect("/men/admin");
-});
-
-// men Edit
-
-app.get("/women/admin/:id/edit", (req, res) => {
-  Men.findById(req.params.id, (err, foundProduct) => {
-    console.log(err);
-    if (!err) {
-      res.render("MenEdit", {
-        product: foundProduct,
-        cart: cart,
-        //pass in the foundStudent so we can prefill the form
-      });
-    } else {
-      res.send({ msg: err.message });
-    }
-  });
-});
-
-// app.post("/women/admin", (req, res) => {
-//   if (req.body.isUsed === "on") {
-//     req.body.isUsed = true;
-//   } else {
-//     req.body.isUsed = false;
-//   }
-
-//   Women.create(req.body, (err, createdProduct) => {
-//     console.log(err);
-//     console.log("Just Added : ", createdProduct);
-//   });
-//   res.redirect("/women/admin");
-// });
-
-// men admin route
-app.get("/men/admin", (req, res) => {
-  Men.find({}, (err, allProducts) => {
-    // console.log(err);
-    res.render("MenAdmin", {
-      products: allProducts,
-      cart: cart,
-    });
-  });
-});
-
 // Women New Route
 app.get("/women/admin/new", (req, res) => {
-  //refresh shopping cart
-
   Women.find({}, (err, allProducts) => {
     // console.log(err);
     res.render("WomenNew", {
@@ -244,25 +213,11 @@ app.get("/women/admin/new", (req, res) => {
   });
 });
 
+// Men New Route
 app.get("/men/admin/new", (req, res) => {
-  //refresh shopping cart
-
   Men.find({}, (err, allProducts) => {
     // console.log(err);
     res.render("MenNew", {
-      products: allProducts,
-      cart: cart,
-    });
-  });
-});
-
-// Men Route
-app.get("/men", (req, res) => {
-  //refresh shopping cart
-
-  Men.find({}, (err, allProducts) => {
-    // console.log(err);
-    res.render("Men", {
       products: allProducts,
       cart: cart,
     });
@@ -298,7 +253,6 @@ app.post("/men/cart/:id", (req, res) => {
 });
 
 // Seed Route
-
 app.get("/seed", (req, res) => {
   Men.create(seedMen);
   Women.create(seedWomen);

@@ -6,7 +6,7 @@ class Men extends React.Component {
     const { products } = this.props;
     const { cart } = this.props;
     return (
-      <DefaultLayout title={"Flea Market"} cart={cart.length} subtitle={"Men"}>
+      <DefaultLayout title={"Flea Market"} cart={cart.length} subtitle={"MEN"}>
         <div>
           <div className="pageNav">
             <div className="backContainer">

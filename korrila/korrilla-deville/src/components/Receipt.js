@@ -10,11 +10,11 @@ function receipt(props) {
         <div className="listItem">Protein: {props.receipt.order.protein}</div>
         <div className="listItem"> Rice: {props.receipt.order.rice}</div>
         <div className="listItem"> Sause: {props.receipt.order.sauce}</div>
+        <div className="listItem">Toppings: {props.receipt.order.toppings}</div>
+        <div className="listItem"> Drink: {props.receipt.order.drink}</div>
+        <div className="listItem"> Cost: {props.receipt.order.cost}</div>
 
-        <div className="listItem">
-          {" "}
-          Toppings: {props.receipt.order.toppings}
-        </div>
+        {/* <div className="listItem paidCheck"> Comfirm Payment</div> */}
       </div>
     </>
   );

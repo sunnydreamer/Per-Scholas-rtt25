@@ -1,0 +1,139 @@
+body {
+  background-color: #f4f3e7;
+}
+
+.brand {
+  font-size: 35px;
+  font-weight: 500;
+  padding: 20px;
+  border-bottom: solid black 1px;
+  color: #00473c;
+}
+
+.content {
+  display: flex;
+}
+
+.cart {
+  /* background-color: red; */
+  width: 40%;
+  height: 100vh;
+  border-right: solid black 1px;
+  padding: 30px 15px;
+}
+
+/* =============================MENU======================= */
+.menu {
+  /* background-color: green; */
+  width: 60%;
+  height: 100vh;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 50px;
+}
+
+.categoryName {
+  /* background-color: green; */
+  margin: 30px;
+  font-size: 40px;
+}
+
+.card {
+  width: 120px;
+  height: 230px;
+  background-color: #ded2bd;
+  padding: 10px 20px;
+  margin: 15px;
+  border-radius: 20px;
+}
+
+.card:hover {
+  background-color: #d4c4a7;
+  cursor: pointer;
+}
+
+.cardName {
+  /* background-color: red; */
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.minusIcon {
+  width: 25px;
+  background-color: white;
+  border-radius: 50px;
+}
+.quanNum {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background-color: #00473c;
+  color: white;
+}
+
+/* =======================================cart======================================= */
+
+.cart {
+  /* background-color: gray; */
+  padding: 40px 20px;
+}
+
+.plateName {
+  /* background-color: red; */
+  height: 50px;
+  font-size: 30px;
+}
+
+.cartContent {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px auto;
+}
+
+.info {
+  display: flex;
+  /* background-color: yellow; */
+  justify-content: center;
+}
+
+.infoItem {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.btns {
+  display: flex;
+  border-top: solid black 1px;
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 20px;
+  width: 50%;
+  border: solid black 1px;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.buy {
+  border: none;
+  background-color: #00473c;
+  color: white;
+}
+
+.buy:hover {
+  background-color: #015c4e;
+}

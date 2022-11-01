@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Nav Start -->
+    <nav class="position-fixed mh-25 pt-3 pb-3">
+      <ul class="nav justify-content-center">
+        <li class="nav-item list active">
+          <a class="nav-link active" href="#home">Home</a>
+        </li>
+        <li class="nav-item list">
+          <a class="nav-link" href="#concept">Concept</a>
+        </li>
+        <li class="nav-item list">
+          <a class="nav-link" href="#importance">Importance</a>
+        </li>
+        <li class="nav-item list">
+          <a class="nav-link" href="#application">Application</a>
+        </li>
+        <li class="nav-item list">
+          <a class="nav-link" href="#interview">Interview</a>
+        </li>
+        <li class="nav-item list">
+          <a class="nav-link" href="#reference">Reference</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Nav Ends -->
+
+    <section class="sec" style="background-color: beige" id="home">
+      <div class="title">Binary Search Trees</div>
+      <div class="imgTextContainer">
+        <img src="/public/binarytree.png" alt="" class="landingImg" />
+        <div class="text">
+          <div class="subtitle">Summary</div>
+          <hr />
+          <ul>
+            <li>Why is this a Critical Part of the Interviewing Process?</li>
+            <li>
+              How can I leverage this tool to increase my abilities as an
+              Engineer?
+            </li>
+            <li>Sample Interview Question Of my Subject</li>
+            <li>Answer to Question</li>
+            <li>Logical Pitch to Employers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="sec" style="background-color: white" id="concept">
+      <div class="contentTitle">Concept</div>
+
+      <div class="threeBlocks">
+        <div class="block" id="binarysearch">
+          <div class="blockTitle">Binary Search</div>
+          <div class="description">
+            Binary search is an algorithm for finding an element in a binary
+            search tree.
+          </div>
+          <div id="binarysearchImg"></div>
+        </div>
+        <div class="block">
+          <div class="blockTitle">Binary Tree</div>
+          <div class="description">
+            A data structure
+            <br />
+            In this structure, each node has up to 2 children
+          </div>
+          <a href="/public/800px-Binary_tree.svg_-768x640.png" target="_blank"
+            ><img
+              class="conceptImg"
+              src="/public/800px-Binary_tree.svg_-768x640.png"
+              alt=""
+          /></a>
+        </div>
+
+        <div class="block">
+          <div class="blockTitle">Binary Search Tree</div>
+          <div class="description">
+            A binary search tree is a binary tree where the left and right
+            subtrees are also binary search trees.
+            <br />
+            <br />
+            All the nodes in the left subtree are less than the root's element,
+            and all the elements of all the nodes in the right subtree are
+            greater than the root's element.
+          </div>
+          <a
+            href="/public/800px-Binary_search_tree.svg_-768x640.png"
+            target="_blank"
+            ><img
+              class="conceptImg"
+              src="/public/800px-Binary_search_tree.svg_-768x640.png"
+              alt=""
+          /></a>
+        </div>
+      </div>
+    </section>
+    <section class="sec" style="background-color: beige" id="importance">
+      <div class="contentTitle">Importance</div>
+      <div class="descriptionWide">
+        With thousands of data points, sorting and finding the right data can be
+        time consuming if not done properly. One of the most important and
+        <strong>simplest</strong> data structures that help with this is the
+        Binary Search Tree (BST).
+        <br />
+        <br />
+        If the patterns you write in your code are not
+        <strong>efficient</strong>, you are stealing time from your users and in
+        essence, draining them of their precious life force. If “developer”
+        secretly meant “code vampire” this would be fine; but as it stands,
+        wasteful code accomplishes nothing beyond annoying your users. Use
+        efficient code, and don't steal life force!
+      </div>
+    </section>
+
+    <section class="sec" style="background-color: white" id="application">
+      <div class="contentTitle">Application</div>
+      <div class="realLifeExamples">
+        <div class="example">
+          <img
+            class="exampleImg"
+            src="./public/Filworx_Job_Portal_Featured_Image.jpg"
+            alt=""
+          />
+        </div>
+        <div class="example">
+          <img class="exampleImg" src="./public/yellowpages4.jpg" alt="" />
+        </div>
+        <div class="example">
+          <img
+            class="exampleImg"
+            src="./public/oxford-dictionaries.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" style="background-color: beige" id="interview">
+      <div class="contentTitle">Interview</div>
+      <div class="subtitle">-Leetcode 700-</div>
+      <div class="descriptionWide">
+        <strong>Question:</strong>
+        <br />
+        <br />
+        Given the root node of a binary search tree (BST) and a value. You need
+        to find the node in the BST that the node's value equals the given
+        value. Return the subtree rooted with that node. If such node doesn't
+        exist, you should return NULL.
+      </div>
+      <img src="./public/leetcode2.jpg" alt="" />
+      <div class="leetcodeQuestion">
+        <br />
+        <strong>Example1:</strong> root = [4,2,7,1,3], val = 2 output:[2,1,3]
+        <br />
+        <br />
+        <strong>Example2:</strong> root = [4,2,7,1,3], val = 5 output:[]
+      </div>
+      <div class="descriptionWide">
+        <strong>Answer:</strong>
+        <br />
+        <br />
+        <div class="answerContainer">
+          <img class="leetcodeAnswerImg" src="./public/leetcode2.jpg" alt="" />
+          <img
+            class="answer"
+            src="./public/Screenshot 2022-11-01 004954.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+    <section class="sec" style="background-color: white" id="reference">
+      <div class="contentTitle">Reference</div>
+      <div class="descriptionWide">
+        <ul>
+          <li>
+            <a
+              href="https://stackoverflow.com/questions/21586085/difference-between-binary-search-and-binary-search-tree#:~:text=As%20often%20presented%2C%20binary%20search%20refers%20to%20the,make%20these%20two%20sides%20of%20the%20same%20coin."
+              >Difference between binary search and binary search tree?</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.upgrad.com/blog/binary-tree-vs-binary-search-tree/
+            "
+              >Binary Tree vs Binary Search Tree: Difference Between Binary Tree
+              and Binary Search Tree</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=xT10fDc_hq8
+            "
+              >Binary Trees VS binary Search Trees</a
+            >
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=OJ5NYq1Eii8"
+              >Tree applications</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.lookfar.com/blog/2016/07/28/why-binary-search-trees-matter/"
+              >How and When to Implement Binary Search Trees</a
+            >
+          </li>
+          <li>
+            <a href="https://iq.opengenus.org/applications-of-binary-tree/"
+              >Applications of Binary Tree</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://leetcode.com/problems/search-in-a-binary-search-tree/"
+              >Search in Binary Search Tree</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/app.js" async defer></script>
+  </body>
+</html>

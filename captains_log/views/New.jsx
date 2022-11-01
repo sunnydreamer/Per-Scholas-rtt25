@@ -5,9 +5,9 @@ class New extends React.Component {
     return (
       <div>
         <form action="/logs" method="POST">
-          Title: <input type="text" name="title" />
+          Title: <input type="text" name="title" required />
           <br />
-          Entry: <input type="textarea" name="entry" />
+          Entry: <input type="textarea" name="entry" required />
           <br />
           shipIsBroken: <input type="checkbox" name="shipIsBroken" />
           <br />

@@ -33,7 +33,7 @@ mongoose.connection.once("open", () => {
 //   next();
 // });
 
-// Index
+// #1 Index
 
 app.get("/logs", (req, res) => {
   Log.find({}, (err, allLogs) => {
@@ -43,13 +43,23 @@ app.get("/logs", (req, res) => {
     });
   });
 });
-
-// New Route
+// #2 New Route
 app.get("/logs/new", (req, res) => {
   res.render("New", {});
 });
 
-// Create Route
+// #3 Show Route
+app.get("/logs/:id", (req, res) => {
+  Log.findById(req.params.id, (err, foundLog) => {
+    console.log(err);
+    console.log("Found", foundLog);
+    res.render("Show", {
+      log: foundLog,
+    });
+  });
+});
+
+// #4 Create Route
 
 app.post("/logs", (req, res) => {
   if (req.body.shipIsBroken === "on") {
@@ -63,30 +73,10 @@ app.post("/logs", (req, res) => {
     console.log("Just Added:", createdLog);
   });
 
-  // res.send(req.body);
-
   res.redirect("/logs");
 });
 
-// Show Route
-app.get("/logs/:id", (req, res) => {
-  Log.findById(req.params.id, (err, foundLog) => {
-    console.log(err);
-    console.log("Found", foundLog);
-    res.render("Show", {
-      log: foundLog,
-    });
-  });
-});
-
-// Delete Route
-app.delete("/logs/:id", (req, res) => {
-  Log.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect("/logs");
-  });
-});
-
-//Edit Route
+// #5 Edit Route
 app.get("/logs/:id/edit", (req, res) => {
   Log.findById(req.params.id, (err, foundLog) => {
     console.log(err);
@@ -98,7 +88,7 @@ app.get("/logs/:id/edit", (req, res) => {
   });
 });
 
-// PUT/PATCH
+// #6 PUT/PATCH
 app.put("/logs/:id", (req, res) => {
   if (req.body.shipIsBroken === "on") {
     req.body.shipIsBroken = true;
@@ -110,6 +100,13 @@ app.put("/logs/:id", (req, res) => {
     console.log(err);
     console.log(updatedLog);
     res.redirect(`/logs/${req.params.id}`);
+  });
+});
+
+// #7 Delete Route
+app.delete("/logs/:id", (req, res) => {
+  Log.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/logs");
   });
 });
 

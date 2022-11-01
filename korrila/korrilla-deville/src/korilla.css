@@ -9,17 +9,27 @@ body {
 
 .orderList {
   padding: 1em;
+  border: solid salmon;
+  border-radius: 22px;
 }
 
 .listItem {
   width: 300px;
   margin: 0.5em auto;
-  border: solid salmon;
+
   font-size: 24px;
-  border-radius: 22px;
 }
 
 .parent {
   display: flex;
   justify-content: space-evenly;
+}
+
+.paidCheck {
+  width: 250px;
+  background-color: green;
+  border-radius: 25px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
 }
