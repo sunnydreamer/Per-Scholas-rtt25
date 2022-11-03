@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Space Battle</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- win statement -->
+    <div class="finalResultWin">
+      <div class="finalText">YOU WON!</div>
+      <div class="btn playAgain" onclick="createAliens(6)">Play Again</div>
+      <div class="finalBgWin"></div>
+    </div>
+
+    <!-- lose statement -->
+    <div class="finalResultLose">
+      <div class="finalText">YOU LOST!</div>
+      <div class="btn playAgain" onclick="createAliens(6)">Play Again</div>
+      <div class="finalBgLose"></div>
+    </div>
+
+    <!-- retreat statement -->
+    <div class="finalResultRetreat">
+      <div class="finalText">YOU GOT AWAY SAFELY!</div>
+      <div class="btn playAgain" onclick="createAliens(6)">Play Again</div>
+      <div class="finalBgRetreat"></div>
+    </div>
+
+    <!-- game heaader -->
+    <div class="header">
+      <div class="gameName">Space Battle</div>
+    </div>
+
+    <!-- aliens -->
+    <div class="aliens"></div>
+    <!-- aliens end-->
+
+    <!-- battle status -->
+    <div class="battleStatus">
+      <div class="playerStatus">"Battle starts !! "</div>
+      <div class="enemyStatus"></div>
+    </div>
+
+    <!-- battle status end -->
+
+    <!-- spaceship -->
+    <div class="spaceships">
+      <div class="btns">
+        <div class="btn retreat" onclick="retreat()">Retreat</div>
+        <div class="btn retreatInactive">Retreat</div>
+        <div class="btn shoot" onclick="shoot()">Shoot</div>
+      </div>
+
+      <div class="spaceshipCard">
+        <img
+          src="https://www.clipartkey.com/mpngs/b/14-146283_spaceship-clipart.png"
+          alt=""
+          class="spaceship"
+        />
+        <div class="hpSpaceship">
+          <div class="hpStrSpaceship">HP:</div>
+          <div class="hpNumSpaceship"></div>
+        </div>
+      </div>
+    </div>
+    <!-- spaceship end-->
+    <script src="app.js"></script>
+  </body>
+</html>

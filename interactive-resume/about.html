@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Menu -->
+    <div class="menu">
+      <img
+        onclick="showMenu()"
+        src="https://icon-library.com/images/white-menu-icon/white-menu-icon-12.jpg"
+        alt=""
+        class="menuBtn"
+      />
+      <div class="menuItems">
+        <div class="menuItem"><a href="/index.html">Home </a></div>
+        <div class="menuItem"><a href="/about.html">About </a></div>
+        <div class="menuItem"><a href="/project.html">Project</a></div>
+        <div class="menuItem"><a href="/contact.html">Contact</a></div>
+      </div>
+    </div>
+    <!-- Menu -->
+
+    <div class="pageTitle">About Me</div>
+
+    <div class="profilePic">
+      <img src="/images/portrait.jpg" alt="" class="selfPortrait" />
+    </div>
+
+    <div class="textContainer">
+      <div class="pageBtns">
+        <div class="pageBtn summaryBtn" onclick="summary()">SUMMARY</div>
+        <div class="pageBtn educationBtn" onclick="education()">EDUCATION</div>
+        <div class="pageBtn workBtn" onclick="work()">WORKING EXPERIENCE</div>
+        <div class="pageBtn skillBtn" onclick="skill()">SKILLS</div>
+      </div>
+      <div class="textBox">
+        Highly motivated and skilled IT professional. <br />Passionate about
+        aesthetics and web design. Willing to deliver the best user-friendly
+        products. <br />Detail-oriented, extremely organized and able to work in
+        a multi-task environment.
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

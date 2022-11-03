@@ -1,0 +1,123 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: lightblue;
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.subtitle {
+  font-size: 25px;
+}
+
+.movieInfo {
+  display: block;
+  border: blue solid;
+  height: 480px;
+}
+
+.moviePicture {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftArrow {
+  width: 20px;
+  margin: 20px;
+}
+
+.rightArrow {
+  width: 20px;
+  margin: 20px;
+}
+
+/* picures */
+.DarkKnight {
+  height: 200px;
+}
+
+#DarkKnight1 {
+  display: block;
+}
+
+#DarkKnight2 {
+  display: none;
+}
+
+#DarkKnight3 {
+  display: none;
+}
+
+#Godfather1 {
+  display: none;
+}
+
+#Godfather2 {
+  display: none;
+}
+
+#Godfather3 {
+  display: none;
+}
+
+#Shawshank1 {
+  display: none;
+}
+
+#Shawshank2 {
+  display: none;
+}
+
+#Shawshank3 {
+  display: none;
+}
+
+.movieName {
+  font-size: 30px;
+}
+
+.movieDesc {
+  margin: 20px;
+  /* border: solid blue; */
+}
+.darknightDesc {
+  display: block;
+}
+
+.godfaherDesc {
+  display: none;
+}
+
+.shawshankDesc {
+  display: none;
+}
+
+#no3 {
+  display: block;
+}
+
+#no2 {
+  display: none;
+}
+
+#no1 {
+  display: none;
+}
+
+#no3title {
+  display: block;
+}
+
+#no2title {
+  display: none;
+}
+
+#no1title {
+  display: none;
+}

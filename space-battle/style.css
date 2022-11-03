@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://wallpapercave.com/wp/wp2863950.gif");
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.gameName {
+  font-size: 70px;
+  padding: 50px;
+}
+
+.aliens {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 900px;
+  /* height: 400px; */
+  flex-wrap: wrap;
+
+  /* border: solid white; */
+  margin: auto;
+}
+
+.alienCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16.6666666666666667%;
+
+  /* border: solid green; */
+}
+
+.spaceshipCard {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  /* border: solid green; */
+}
+
+.alien {
+  display: block;
+  height: 80px;
+}
+
+.hp {
+  display: flex;
+  border: solid blue;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.hpSpaceship {
+  display: flex;
+  border: solid lightgray;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.battleStatus {
+  height: 100px;
+  width: 900px;
+  margin: auto;
+  padding-top: 20px;
+  /* border: purple solid; */
+}
+
+.enemyStatus {
+  color: lightgreen;
+}
+
+.spaceships {
+  width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: solid gray;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.spaceship {
+  width: 100px;
+  /* border: solid blue; */
+}
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  /* border: solid red; */
+  font-size: 30px;
+}
+
+.btn {
+  margin: 10px;
+  padding: 10px;
+}
+
+.retreatInactive {
+  display: block;
+  background-color: gray;
+  border-radius: 20px;
+  color: white;
+}
+
+.retreat {
+  display: none;
+  background-color: rgb(203, 0, 0);
+  border-radius: 20px;
+  color: white;
+}
+
+.retreat:hover {
+  background-color: red;
+  border-radius: 20px;
+  color: white;
+}
+
+.retreat:active {
+  background-color: rgb(203, 0, 0);
+  border-radius: 20px;
+  color: white;
+}
+
+.shoot {
+  background-color: rgb(233, 128, 0);
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.shoot:hover {
+  background-color: orange;
+  border-radius: 20px;
+  color: white;
+}
+.shoot:active {
+  background-color: rgb(233, 128, 0);
+  border-radius: 20px;
+  color: white;
+}
+.finalResultWin {
+  display: none;
+  /* border: solid orangered; */
+}
+
+.finalResultLose {
+  display: none;
+}
+
+.finalResultRetreat {
+  display: none;
+}
+
+.finalText {
+  position: absolute;
+  font-size: 50px;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -200%);
+  z-index: 1;
+}
+
+.playAgain {
+  position: absolute;
+  font-size: 30px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: black;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-60%, -50%);
+  z-index: 1;
+}
+
+.playAgain:hover {
+  position: absolute;
+  font-size: 30px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgb(40, 40, 40);
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-60%, -50%);
+  z-index: 1;
+}
+
+.playAgain:active {
+  position: absolute;
+  font-size: 30px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: black;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-60%, -50%);
+  z-index: 1;
+}
+
+.finalBgWin {
+  position: absolute;
+  background: green;
+  width: 100%;
+  height: 100vh;
+  opacity: 90%;
+}
+
+.finalBgLose {
+  position: absolute;
+  background: red;
+  width: 100%;
+  height: 100vh;
+  opacity: 90%;
+}
+
+.finalBgRetreat {
+  position: absolute;
+  background: orange;
+  width: 100%;
+  height: 100vh;
+  opacity: 90%;
+}
