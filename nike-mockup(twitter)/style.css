@@ -1,0 +1,231 @@
+body {
+  margin: 0 10%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.navBar {
+  flex-basis: 20%;
+}
+
+.home {
+  flex-basis: 40%;
+  border-left: solid rgb(247, 244, 247);
+  border-right: solid rgb(247, 244, 247);
+  border-width: thin;
+}
+
+.bookmark {
+  flex-basis: 40%;
+}
+
+.noBook {
+  text-align: center;
+}
+
+.noBookImg {
+  margin: auto;
+}
+
+.recommendation {
+  flex-basis: 25%;
+}
+
+.logo {
+  height: 30px;
+  margin: 15px;
+}
+.smallIcon {
+  height: 30px;
+  margin: 15px;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+}
+
+.tweetBtnBig {
+  text-align: center;
+  font-size: 30px;
+  background-color: #1da1f2;
+  color: white;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 30px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.profilePic {
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.userId {
+  color: gray;
+}
+
+.profileMore {
+  margin-left: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.homeTitle {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.homeBtn {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.topTweets {
+  height: 25px;
+}
+
+.homeInput {
+  display: flex;
+  border-bottom: solid rgb(247, 244, 247);
+  border-width: thin;
+}
+
+.tweetBoxContainer {
+  width: 100%;
+  margin-top: 25px;
+  margin-right: 25px;
+}
+
+.tweetBox {
+  font-size: 25px;
+}
+
+.tweetBtns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid gray;
+  border-width: thin;
+  padding: 20px;
+  margin-right: 10px;
+}
+
+.tweetBtn {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.tweetBtnSmall {
+  background-color: #1da1f2;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.newTweetsNotification {
+  text-align: center;
+  padding: 20px;
+  color: #1da1f2;
+}
+
+.tweets {
+  border-top: solid rgb(247, 244, 247);
+  border-width: thin;
+}
+
+.tweet {
+  display: flex;
+}
+.post {
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+.postImg {
+  border-radius: 20px;
+}
+
+.postBtns {
+  display: flex;
+  justify-content: space-around;
+}
+.postBtn {
+  display: flex;
+  align-items: center;
+}
+
+.postBtnImg {
+  height: 17px;
+  margin-right: 10px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: rgb(247, 244, 247);
+  border-radius: 30px;
+  margin: 20px;
+}
+
+.searchLogo {
+  height: 20px;
+  margin: 15px;
+}
+
+.searchInput {
+  background-color: rgb(247, 244, 247);
+  font-size: large;
+  width: 90%;
+}
+
+.infoBox {
+  margin: 20px;
+  background-color: rgb(247, 244, 247);
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.infoBoxTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.infoBoxSubtitle {
+  color: gray;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.infoCard {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+.infoBoxContent {
+  font-weight: bold;
+}
+.infoCardImg {
+  height: 75px;
+  width: 75px;
+  /* flex-basis: 10px; */
+  border-radius: 20px;
+}

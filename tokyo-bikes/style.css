@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+}
+
+.freeShippingBar {
+  padding: 20px;
+  background-color: olive;
+  color: white;
+  text-align: center;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 35px;
+}
+
+.navItems {
+  display: flex;
+}
+
+.navItem {
+  margin: 20px;
+}
+
+.mianPic {
+  position: relative;
+}
+
+.mainPicImg {
+  width: 100%;
+}
+
+.mainPicDesc {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  padding: 40px;
+  padding-bottom: 80px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.mainPicDescTitle {
+  font-size: 30px;
+}
+
+.mainPicDescText {
+  margin: 25px 0;
+  font-size: 20px;
+  max-width: 60%;
+}
+
+.shopNowBtn {
+  position: absolute;
+  bottom: 10%;
+  background-color: white;
+  margin: 30px 40px;
+  padding: 15px;
+}
+
+.productGallery {
+  background-color: #ebebea;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.productGalleryTitle {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.productGalleryLine {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+.product {
+  margin: 30px;
+}
+.productPic {
+  width: 100%;
+}
+
+.productName {
+  font-size: large;
+  font-weight: bold;
+}
+
+.colors {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.color {
+  height: 14px;
+  width: 14px;
+  border-radius: 100%;
+  margin: 3px;
+}
+
+.black {
+  background-color: black;
+}
+
+.darkgray {
+  background-color: darkgrey;
+}
+
+.brandStory {
+  background-color: white;
+  text-align: center;
+}
+
+.brandStoryTitle {
+  padding-top: 80px;
+}
+
+.brandStoryLine {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.blog {
+  margin: 30px;
+}
+
+.blogTitle {
+  margin: 20px;
+}
+
+.blogPic {
+  width: 100%;
+}
+
+.seeMoreBtn {
+  margin: 20px 32%;
+  border: solid black;
+  border-width: 3px;
+  padding: 10px 5px;
+}
+.footer {
+  background-color: #ebebea;
+  color: darkgray;
+  padding-bottom: 50px;
+}
+
+.footerNav {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 60px;
+}
+
+.footerCol {
+  width: 100%;
+}
+
+.colName {
+  margin-bottom: 20px;
+  width: 80%;
+  padding-bottom: 10px;
+  border-bottom: solid gray;
+  border-width: 2px;
+}
+
+.colItem {
+  margin: 20px 0;
+  font-size: large;
+  width: 80%;
+}
+
+.colItem:hover {
+  text-decoration: underline;
+}
+
+.copyRight {
+  text-align: center;
+}
+
+.signUpContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signUpInput {
+  width: 70%;
+  border: solid darkgray;
+  border-width: 1px;
+  margin-right: 5px;
+}
+
+.signUpInput::placeholder {
+  color: lightgray;
+}
+
+.signUpBtn {
+  background-color: darkgray;
+  color: #ebebea;
+  padding: 10px;
+  width: 25%;
+  text-align: center;
+}
