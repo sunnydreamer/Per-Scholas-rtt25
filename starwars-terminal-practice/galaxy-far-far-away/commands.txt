@@ -1,0 +1,143 @@
+
+
+// Setup
+
+
+1.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs
+$ mkdir git-github-and-terminal
+
+2.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs
+$ cd git-github-and-terminal/
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal
+$ mkdir galaxy-far-far-away
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal
+$ cd galaxy-far-far-away/
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ touch commands.txt
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ code commands.txt
+
+
+// Part I: Set the Scene
+
+
+1.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ mkdir death_star
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ cd death_star
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ touch darth_vader.txt princess_leia.txt storm_trooper.txt
+
+2.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ cd ..
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ mkdir tatooine
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ cd tatooine
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/tatooine
+$ touch luke.txt ben_kenobi.txt
+
+3.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/tatooine
+$ mkdir millenium_falcon
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/tatooine
+$ cd millenium_falcon/
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/tatooine/millenium_falcon
+$ touch han_solo.txt chewbaca.txt
+
+
+// Part II: mv- rename
+
+
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/tatooine/millenium_falcon
+$ cd ..
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/tatooine
+$ mv ben_kenobi.txt obi_wan.txt
+
+
+// Part II: cp- copy
+
+
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ cp storm_trooper.txt ../tatooine/
+
+
+// Part IV: mv- move
+
+
+1. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/tatooine
+$ mv luke.txt obi_wan.txt millenium_falcon/
+2.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/tatooine
+$ mv millenium_falcon/ ../
+3.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ mv millenium_falcon/ death_star/
+4.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-away
+$ cd death_star/
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ mv princess_leia.txt millenium_falcon/
+
+
+// Part V: rm- remove
+
+
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star/millenium_falcon
+$ rm obi_wan.txt
+
+// Part VI: all together
+
+1. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ mkdir yavin_4
+2. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ mv millenium_falcon/ ../yavin_4/
+3. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/yavin_4
+$ mkdir x_wing
+4. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/yavin_4/millenium_falcon
+$ mv princess_leia.txt ../
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/yavin_4/millenium_falcon
+$ mv luke.txt ../x_wing/
+5. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/yavin_4
+$ mv millenium_falcon/ ../
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/yavin_4
+$ mv x_wing/ ../
+6. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ mkdir tie_fighter_1 tie_fighter_2 tie_fighter_3
+7. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ mv darth_vader.txt tie_fighter_1
+8. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ cp storm_trooper.txt tie_fighter_2
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ cp storm_trooper.txt tie_fighter_3
+9. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/death_star
+$ mv tie_fighter_* ../
+
+
+// Part VII: rm -r: remove directories and everything they contain
+
+
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ rm -rf tie_fighter_2 tie_fighter_3
+
+
+Part VIII: 
+
+
+1. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ cd x_wing/
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/x_wing
+$ touch the_force.txt
+2. Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away/x_wing
+$ cd ..
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ rm -rf death_star
+3.Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ mv x_wing/ yavin_4/
+Sunny@DESKTOP-7VP1JQ9 MINGW64 ~/desktop/Dev/Labs/git-github-and-terminal/galaxy-far-far-away
+$ mv millenium_falcon/ yavin_4/
+
+
+
+
+
+
+
+
+
