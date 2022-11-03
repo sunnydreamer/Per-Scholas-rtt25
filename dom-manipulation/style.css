@@ -1,0 +1,41 @@
+body {
+  text-align: center;
+}
+.text {
+  border: solid blue;
+  background-color: aquamarine;
+  width: 50%;
+  height: 50px;
+  margin: auto;
+  padding: 10px;
+}
+
+.btns {
+  display: flex;
+  width: 30%;
+
+  justify-content: center;
+
+  margin: 20px auto;
+}
+
+.btn1 {
+  background-color: pink;
+  margin: 10px;
+  border: solid black;
+  padding: 10px;
+}
+
+.btn2 {
+  background-color: lightgreen;
+  margin: 10px;
+  border: solid black;
+  padding: 10px;
+}
+
+.btn3 {
+  background-color: lightyellow;
+  margin: 10px;
+  border: solid black;
+  padding: 10px;
+}

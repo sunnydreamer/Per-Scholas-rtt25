@@ -1,0 +1,46 @@
+.navLogo {
+  width: 60px;
+  margin: 20px;
+}
+
+.nav-item {
+  margin: 20px;
+}
+
+.mainPic {
+  margin: auto;
+  width: 50%;
+}
+
+.carousel-item {
+  height: 60vh;
+}
+
+.contact {
+  /* border: solid blue; */
+  margin: 0 20%;
+  margin-bottom: 50px;
+  /* border: solid blue; */
+  text-align: center;
+}
+
+.title {
+  border-bottom: solid gray;
+  border-width: 2px;
+  padding: 20px;
+}
+.card-bg:hover {
+  background-color: lightgray;
+}
+#searchInput {
+  border-radius: 30px;
+  height: 3em;
+}
+
+#searchBtn {
+  border-radius: 30px;
+}
+
+#cards {
+  margin: 50px;
+}
