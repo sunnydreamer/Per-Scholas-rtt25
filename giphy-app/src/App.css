@@ -1,0 +1,57 @@
+* {
+  text-align: center;
+  background-color: lightblue;
+}
+
+.gifCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  /* background-color: red; */
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.searchForm {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.searchForm input {
+  height: 80px;
+  background-color: white;
+  border-radius: 30px;
+  border: none;
+  font-size: 30px;
+}
+
+.randomImg {
+  width: 200px;
+  height: 200px;
+}
+
+.randomBtn {
+  margin-bottom: 20px;
+  height: 50px;
+  width: 200px;
+  border-radius: 30px;
+}
+
+.randomBtn:hover {
+  background-color: pink;
+}
+
+.randomBtn:active {
+  background-color: rgb(223, 128, 144);
+}
